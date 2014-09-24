@@ -78,14 +78,45 @@ int main() {
 }
 ```
 5. [Commit](#committing-a-file) these changes into the testing branch.
-<<<<<<< HEAD
-=======
 
 ###Merging
 1. Now it's time to bring our extremely effective tests back to the master branch.
 First switch back to the master branch with `git checkout master`
 2. Merge Testing into master with `git merge Testing`.
-
+3. Run `git status`. Note that new.cpp is listed as being in conflict.
+4. Lets open the file and resolve those conflicts.
+The file should look something like this:
+```
+int main() {
+	cout << "Hello World!";
+	int i = 0;
+<<<<<<< HEAD
+=======
+	
+	if (i == 0) {
+		cout << "All tests passed.";
+	}
 >>>>>>> Testing
+	return 0;
+}
+```
+This tells us that the testing branch added the
+code between the `<<<<<<< HEAD =======` and the `>>>>>>> Testing`
+5. Since we have no conflicts to resolve, lets just remove those markers.
+```
+int main() {
+	cout << "Hello World!";
+	int i = 0;
+	if (i == 0) {
+		cout << "All tests passed.";
+	}
+	return 0;
+}
+```
+You could also use a merging tool such as WinMerge to merge branches or files.
+6. Type `git add *` to let git know you have finished merging the files.
+7. Lets check the status again with `git status`.
+Now it should say that all conflicts have been fixed.
+8. Now all we have left to do is [commit](#committing-a-file) our merged changes.
 
 
