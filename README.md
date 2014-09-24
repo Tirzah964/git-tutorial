@@ -2,14 +2,17 @@ git-tutorial
 ============
 
 ##Tutorial
-
-1. Fork this tutorial 
+This is meant to be a tutorial on using Git. This tutorial assumes that you
+already have git downloaded and installed and that you have a github account.
+To start this tutorial, fork this project on github by clicking the fork button
+on the top right.
 
 ###Basic Setup
 
-1. Navigate to the repository on GitHub
-2. Copy the clone URL
-3. Open command line
+1. Navigate to your fork of the tutorial on GitHub. It will be listed 
+under repositories on your user page.
+2. Copy the clone URL. (It appears on the lower right hand side)
+3. Open command line. If you are in a lab computer you will have to use GitBash
 4. cd to your working directory
 5. enter `git clone https://github.com/<Your Username Here>/git-tutorial.git` This will be the url you copied in step 2
 6. cd into the project directory `cd git-tutorial`
