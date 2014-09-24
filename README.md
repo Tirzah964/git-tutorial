@@ -20,9 +20,9 @@ git-tutorial
 2. Copy this code into the file:
 ```
 int main() {
-	cout << "Hello World!";
-	int i = 0;
-	return 0;
+   cout << "Hello World!";
+   int i = 0;
+   return 0;
 }
 ```
 3. In the command line type `git status`. You will see that the file `new.cpp` is currently untracked and needs to be added to git.
@@ -77,6 +77,7 @@ int main() {
 	return 0;
 }
 ```
+6. Stage the new.cpp file with `git add *`.
 5. [Commit](#committing-a-file) these changes into the testing branch.
 
 ###Merging
