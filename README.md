@@ -3,8 +3,8 @@ git-tutorial
 
 ##Tutorial
 This is meant to be a tutorial on using Git. This tutorial assumes that you
-already have git downloaded and installed and that you have a github account.
-To start this tutorial, fork this project on github by clicking the fork button
+already have git downloaded and installed and that you have a GitHub account.
+To start this tutorial, fork this project on GitHub by clicking the fork button
 on the top right.
 
 ###Basic Setup
@@ -13,9 +13,9 @@ on the top right.
 under repositories on your user page.
 2. Copy the clone URL. (It appears on the lower right hand side)
 3. Open command line. If you are in a lab computer you will have to use GitBash
-4. cd to your working directory
-5. enter `git clone https://github.com/<Your Username Here>/git-tutorial.git` This will be the url you copied in step 2
-6. cd into the project directory `cd git-tutorial`
+4. Change directory to the one you wish to create your repo in; `cd <your working directory>`
+5. Clone your repo with the url from step 2; `git clone https://github.com/<your username>/git-tutorial.git`
+6. Change directory to your newly created project directory; `cd git-tutorial`
 
 ###Add a File
 
@@ -35,9 +35,9 @@ int main() {
 ###Committing a file
 
 6. Commit files to git with `git commit -m "Added new.cpp"`.
-You have not actually yet pushed the file back to github. Git stores the repository locally on your machine, but can also push your changes back to github
-7. Push your changes to github by running the command `git push`
-You will be prompted for your github username and password.
+Note that you have not yet pushed the file back to GitHub. Git has stored the changes to your local repository but pushing these changes back to GitHub is done seperately.
+7. Push your changes to GitHub by running the command `git push`
+You will be prompted for your GitHub username and password.
 
 ###Modifing a file
 1. Hello World is such a boring message. Change it to `"Hello World!!!!!!!"`.
@@ -50,7 +50,7 @@ but use a message of `"Added more exclamation points"` this time.
 1. Your co-worker thinks that the extra exclamation points are excessive
 and frankly poor English. Lets revert that change.
 2. Run `git log` to view the recent commits.
-Each commit will have a id number (a long string of characters).
+Each commit will have its SHA-1 checksum (a 40 hex character string) listed which is used as an id.
 You can revert specific commits by using their id numbers.
 3. Run `git revert <ID of the exclamation point commit>`.
 Note you only need to use the first few characters of the id.
@@ -62,12 +62,12 @@ file to finish reverting.
 All you have left to do is run `git push`
 
 ###Branching
-1. To view all of the branches type `git branch`
-2. Lets add a new branch. Run `git branch "Testing"`
-This creates a Testing branch.
-3. To switch to the Testing branch, type `git checkout Testing`.
-You can get back to the master branch at any time by running `git checkout master`
-4. Now that we are in the Testing branch, lets make some changes.
+1. To view all of the branches enter `git branch`
+2. Lets add a new branch. Run `git branch "testing"`
+This creates a testing branch.
+3. To switch to the testing branch, type `git checkout testing`.
+Note that you can switch back to the master branch at any time by running `git checkout master`. Wait, don't do that yet! We want to make some changes to testing first.
+4. While we are in the testing branch, lets make some changes.
 Change new.cpp to be:
 ```
 int main() {
@@ -80,13 +80,13 @@ int main() {
 	return 0;
 }
 ```
-6. Stage the new.cpp file with `git add *`.
+6. Stage the new.cpp file with `git add new.cpp`.
 5. [Commit](#committing-a-file) these changes into the testing branch.
 
 ###Merging
 1. Now it's time to bring our extremely effective tests back to the master branch.
 First switch back to the master branch with `git checkout master`
-2. Merge Testing into master with `git merge Testing`.
+2. Merge testing into master with `git merge testing`.
 3. Run `git status`. Note that new.cpp is listed as being in conflict.
 4. Lets open the file and resolve those conflicts.
 The file should look something like this:
@@ -100,12 +100,12 @@ int main() {
 	if (i == 0) {
 		cout << "All tests passed.";
 	}
->>>>>>> Testing
+>>>>>>> testing
 	return 0;
 }
 ```
 This tells us that the testing branch added the
-code between the `<<<<<<< HEAD =======` and the `>>>>>>> Testing`
+code between the `<<<<<<< HEAD =======` and the `>>>>>>> testing`
 5. Since we have no conflicts to resolve, lets just remove those markers.
 ```
 int main() {
@@ -117,7 +117,7 @@ int main() {
 	return 0;
 }
 ```
-You could also use a merging tool such as WinMerge to merge branches or files.
+Note that you could also use a merging tool such as WinMerge to merge branches or files.
 6. Type `git add *` to let git know you have finished merging the files.
 7. Lets check the status again with `git status`.
 Now it should say that all conflicts have been fixed.
