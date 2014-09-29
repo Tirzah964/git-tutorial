@@ -35,7 +35,9 @@ int main() {
 ###Committing a file
 
 6. Commit files to git with `git commit -m "Added new.cpp"`.
-Note that you have not yet pushed the file back to GitHub. Git has stored the changes to your local repository but pushing these changes back to GitHub is done seperately.
+
+ >Note that you have not yet pushed the file back to GitHub. Git has stored the changes to your local repository but pushing these changes back to GitHub is done seperately.
+
 7. Push your changes to GitHub by running the command `git push`
 You will be prompted for your GitHub username and password.
 
@@ -90,7 +92,7 @@ First switch back to the master branch with `git checkout master`
 3. Run `git status`. Note that new.cpp is listed as being in conflict.
 4. Lets open the file and resolve those conflicts.
 The file should look something like this:
-```
+ ```
 int main() {
 	cout << "Hello World!";
 	int i = 0;
@@ -103,11 +105,12 @@ int main() {
 >>>>>>> testing
 	return 0;
 }
-```
+ ```
 This tells us that the testing branch added the
 code between the `<<<<<<< HEAD =======` and the `>>>>>>> testing`
+
 5. Since we have no conflicts to resolve, lets just remove those markers.
-```
+ ```
 int main() {
 	cout << "Hello World!";
 	int i = 0;
@@ -116,8 +119,10 @@ int main() {
 	}
 	return 0;
 }
-```
-Note that you could also use a merging tool such as WinMerge to merge branches or files.
+ ```
+ 
+ > Note that you could also use a merging tool such as WinMerge to merge branches or files.
+
 6. Type `git add *` to let git know you have finished merging the files.
 7. Lets check the status again with `git status`.
 Now it should say that all conflicts have been fixed.
