@@ -32,7 +32,7 @@ int main() {
 4. Type `git add new.cpp` to add the file to git.
 5. Run `git status` again and note that `new.cpp` is now ready to be commited.
 
-###Committing a file
+###Committing Changes
 
 6. Commit files to git with `git commit -m "Added new.cpp"`.
 
