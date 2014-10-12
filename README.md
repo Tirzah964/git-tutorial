@@ -2,7 +2,7 @@ git-tutorial
 ============
 
 ##Tutorial
-This is meant to be a tutorial on using Git. This tutorial assumes that you
+This is meant to be a tutorial on using Git for SE3770 at UW-Platteville. This tutorial assumes that you
 already have git downloaded and installed and that you have a GitHub account.
 To start this tutorial, fork this project on GitHub by clicking the fork button
 on the top right.
